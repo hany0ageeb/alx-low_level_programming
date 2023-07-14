@@ -5,39 +5,40 @@
  */
 int main(void)
 {
-unsigned short int first = 0, second, third, fourth;
-unsigned short int val;
-for (; first <= 9; ++first)
+unsigned short int first = 0, second;
+unsigned short int i, j, k, l;
+for (; first <= 98; ++first)
 {
-second = 0;
-for (; second <= 9; ++second)
+second = first + 1;
+for (; second <= 99; ++second)
 {
-val = (second + first * 10) + 1;
-if (val <= 9)
+j = first % 10;
+if (j == first)
 {
-third = 0;
-fourth = val;
+i = 0;
 }
 else
 {
-fourth = val % 10;
-third =  (val - fourth) / 10;
+i = (first - j) / 10;
 }
-for (; third <= 9; ++third)
+l = second % 10;
+if (l == second)
 {
-for (; fourth <= 9; ++fourth)
+k = 0;
+}
+else
 {
-putchar(48 + first);
-putchar(48 + second);
+k = (second - l) / 10;
+}
+putchar(48 + i);
+putchar(48 + j);
 putchar(' ');
-putchar(48 + third);
-putchar(48 + fourth);
-if (first != 9 || second != 8 || third != 9 || fourth != 9)
+putchar(48 + k);
+putchar(48 + l);
+if (first != 98 || second != 99)
 {
 putchar(',');
 putchar(' ');
-}
-}
 }
 }
 }
