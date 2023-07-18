@@ -5,18 +5,18 @@
  */
 void print_fibonacci(int n)
 {
-	unsigned long int  f1 = 1, f = 1, next;
+	unsigned long long  f1 = 1, f = 1, next;
 
 	if (n < 0)
 		return;
 	if (n >= 1)
 	{
-		printf("%ld", f1);
+		printf("%lld", f1);
 	}
 	while (n >= 2)
 	{
 		next = f + f1;
-		printf(", %ld", next);
+		printf(", %lld", next);
 		f1 = f;
 		f = next;
 		n--;
