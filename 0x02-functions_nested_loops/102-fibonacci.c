@@ -5,20 +5,20 @@
  */
 void print_fibonacci(int n)
 {
-	long int  f1 = 1, f;
+	long int  f1 = 1, f = 1, next;
 
 	if (n < 0)
 		return;
-	if (n >= 2)
+	if (n >= 1)
 	{
 		printf("%ld", f1);
 	}
-	while (n >= 3)
+	while (n >= 2)
 	{
-		f = f1 + f0;
-		printf(", %ld", f);
-		f0 = f1;
+		next = f + f1;
+		printf(", %ld", next);
 		f1 = f;
+		f = next;
 		n--;
 	}
 	printf("\n");
