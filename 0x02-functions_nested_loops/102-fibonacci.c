@@ -5,17 +5,13 @@
  */
 void print_fibonacci(int n)
 {
-	long int f0 = 0, f1 = 1, f;
+	long int  f1 = 1, f;
 
 	if (n < 0)
 		return;
-	if (n >= 1)
-	{
-		printf("%ld", f0);
-	}
 	if (n >= 2)
 	{
-		printf(", %ld", f1);
+		printf("%ld", f1);
 	}
 	while (n >= 3)
 	{
