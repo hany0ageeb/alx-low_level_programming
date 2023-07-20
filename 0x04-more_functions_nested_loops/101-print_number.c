@@ -22,42 +22,42 @@ int count_number_digits(int num)
 }
 /**
  * print_number - a function that prints an integer.
- * @num: an integer to print
+ * @n: an integer to print
  * Return: void
  */
 
-void print_number(int num)
+void print_number(int n)
 {
 	int digits_count = count_number_digits(num);
-	int n, remainder, base, printed_digits = 0, remaining_digit_count;
+	int n1, remainder, base, printed_digits = 0, remaining_digit_count;
 
-	if (num < 0)
+	if (n < 0)
 	{
 		_putchar('-');
-		num *= -1;
+		n *= -1;
 	}
-	if (num < 10)
+	if (n < 10)
 	{
-		_putchar(48 + num);
+		_putchar(48 + n);
 	}
 	else
 	{
-		n = num;
+		n1 = n;
 		while (printed_digits < digits_count)
 		{
 			base = 1;
 			remainder = 0;
-			while (n > 0)
+			while (n1 > 0)
 			{
-				remainder = n % 10;
-				n /= 10;
+				remainder = n1 % 10;
+				n1 /= 10;
 				base *= 10;
 			}
-			n = num - remainder * (base / 10);
-			num = n;
+			n1 = num - remainder * (base / 10);
+			n = n1;
 			_putchar(48 + remainder);
 			printed_digits++;
-			remaining_digit_count = count_number_digits(n);
+			remaining_digit_count = count_number_digits(n1);
 			while (remaining_digit_count < (digits_count - printed_digits))
 			{
 				_putchar('0');
