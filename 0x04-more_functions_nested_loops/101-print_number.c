@@ -28,7 +28,7 @@ int count_number_digits(int num)
 
 void print_number(int n)
 {
-	int digits_count = count_number_digits(num);
+	int digits_count = count_number_digits(n);
 	int n1, remainder, base, printed_digits = 0, remaining_digit_count;
 
 	if (n < 0)
@@ -36,33 +36,26 @@ void print_number(int n)
 		_putchar('-');
 		n *= -1;
 	}
-	if (n < 10)
+	n1 = n;
+	while (printed_digits < digits_count)
 	{
-		_putchar(48 + n);
-	}
-	else
-	{
-		n1 = n;
-		while (printed_digits < digits_count)
+		base = 1;
+		remainder = 0;
+		while (n1 > 0)
 		{
-			base = 1;
-			remainder = 0;
-			while (n1 > 0)
-			{
-				remainder = n1 % 10;
-				n1 /= 10;
-				base *= 10;
-			}
-			n1 = num - remainder * (base / 10);
-			n = n1;
-			_putchar(48 + remainder);
+			remainder = n1 % 10;
+			n1 /= 10;
+			base *= 10;
+		}
+		n1 = n - remainder * (base / 10);
+		n = n1;
+		_putchar(48 + remainder);
+		printed_digits++;
+		remaining_digit_count = count_number_digits(n1);
+		while (remaining_digit_count < (digits_count - printed_digits))
+		{
+			_putchar('0');
 			printed_digits++;
-			remaining_digit_count = count_number_digits(n1);
-			while (remaining_digit_count < (digits_count - printed_digits))
-			{
-				_putchar('0');
-				printed_digits++;
-			}
 		}
 	}
 }
