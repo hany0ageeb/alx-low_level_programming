@@ -7,41 +7,14 @@
 
 void print_number(int num)
 {
-	int abs_num, base = 10, index = -1, remainder;
-	char digits[11];
+	int last_digit, first_digit;
 
-	if (num < 0)
-	{
-		abs_num = num * -1;
-	}
-	else
-	{
-		abs_num = num;
-	}
-	if (abs_num < 10)
-	{
-		if (num < 0)
-			_putchar('-');
-		_putchar(48 + num);
-	}
-	else
-	{
-		while (abs_num > 0)
-		{
-			remainder = abs_num % base;
-			index++;
-			digits[index] = remainder / (base / 10);
-			abs_num -= remainder;
-			base *= 10;
-		}
-		if (num < 0)
-			_putchar('-');
-		while (index >= 0)
-		{
-			_putchar(48 + digits[index]);
-			index--;
-		}
-	}
+	last_digit = num % 10;
+	first_digit = (num - last_digit) / 10;
+
+	if (first_digit != 0)
+		_putchar(48 + first_digit);
+	_putchar(48 + last_digit);
 }
 
 /**
