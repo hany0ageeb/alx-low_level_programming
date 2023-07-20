@@ -11,13 +11,13 @@ int count_number_digits(int num)
 	int count = 0;
 
 	num = num < 0 ? num * -1 : num;
-	if (num < 10)
-		return (1);
 	while (num > 0)
 	{
 		num /= 10;
 		count++;
 	}
+	if (count < 1)
+		count++;
 	return (count);
 }
 /**
