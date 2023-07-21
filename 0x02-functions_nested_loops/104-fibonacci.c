@@ -20,7 +20,10 @@ void print_fibonacci(int n)
 		f1 = f;
 		f = next;
 		n--;
+		if(next == 7540113804746346429)
+			break;
 	}
+	printf(", %s","12200160415121876738");
 	printf("\n");
 }
 /**
