@@ -10,12 +10,12 @@ int count_number_digits(int num)
 {
 	int count = 0;
 
-	num = num < 0 ? num * -1 : num;
-	while (num > 0)
+	/*num = num < 0 ? num * -1 : num;*/
+	while (num != 0)
 	{
 		num /= 10;
 		count++;
-	}
+	`}
 	if (count < 1)
 		count++;
 	return (count);
@@ -34,14 +34,14 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		n *= -1;
+		/*n *= -1;*/
 	}
 	n1 = n;
 	while (printed_digits < digits_count)
 	{
 		base = 1;
 		remainder = 0;
-		while (n1 > 0)
+		while (n1 != 0)
 		{
 			remainder = n1 % 10;
 			n1 /= 10;
