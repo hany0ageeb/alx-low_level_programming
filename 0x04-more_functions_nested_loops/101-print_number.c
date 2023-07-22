@@ -49,7 +49,10 @@ void print_number(int n)
 		}
 		n1 = n - remainder * (base / 10);
 		n = n1;
-		_putchar(48 + remainder);
+		if (remainder >= 0)
+			_putchar(48 + remainder);
+		else
+			_putchar(48 + remainder * -1);
 		printed_digits++;
 		remaining_digit_count = count_number_digits(n1);
 		while (remaining_digit_count < (digits_count - printed_digits))
