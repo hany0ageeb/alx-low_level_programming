@@ -15,7 +15,7 @@ int count_number_digits(int num)
 	{
 		num /= 10;
 		count++;
-	`}
+	}
 	if (count < 1)
 		count++;
 	return (count);
