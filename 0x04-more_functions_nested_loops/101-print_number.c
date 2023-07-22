@@ -35,7 +35,7 @@ int print_last_digit(int num)
 		if (base < 1000000000)
 			base *= 10;
 		else
-			base *= 10;
+			base1 *= 10;
 	}
 	if (base1 == 1)
 		num = temp_num - remainder * (base / 10);
