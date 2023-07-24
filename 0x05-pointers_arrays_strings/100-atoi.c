@@ -1,8 +1,8 @@
 #include <stdio.h>
 #define MAX_VAL 100000000
-int get_first_index(char* s);
-int get_last_index(char* s, int begin);
-int calculate_result(char* s, int lastIndexx, int result);
+int get_first_index(char *s);
+int get_last_index(char *s, int begin);
+int calculate_result(char *s, int lastIndexx, int result);
 /**
  * get_first_index - get first numeric char index in s
  * @s: string
