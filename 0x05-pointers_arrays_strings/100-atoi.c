@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <limits.h>
 #define MAX_VAL 100000000
 
 /**
@@ -39,7 +38,7 @@ inline int get_last_index(char *s, int begin)
  * @result: the postivie number
  * Return: result negative if s has sign -
  */
-int calculate_result(char *s, int last_index, int result)
+inline int calculate_result(char *s, int last_index, int result)
 {
 	while (last_index >= 0)
 	{

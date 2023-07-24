@@ -15,6 +15,9 @@ int is_odd(int num);
 void print_array(int *a, int n);
 char *_strcpy(char *dest, char *src);
 int _atoi(char *s);
+int get_first_index(char *s);
+int get_last_index(char *s, int begin);
+int calculate_result(char *s, int last_index, int result);
 
 #endif
 
