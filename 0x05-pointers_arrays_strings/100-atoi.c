@@ -31,11 +31,14 @@ int _atoi(char *s)
 		base *= 10;
 		last_index--;
 	}
-	while (last_index >= 0 && s[last_index] != '-' && (s[last_index] == ' ' || s[last_index]=='+' || s[last_index]=='\t'))
+	while (last_index >= 0 && (s[last_index] == ' ' || s[last_index] == '+' || s[last_index] == '\t' || s[last_index] == '-'))
+	{
+		if( s[last_index] == '-')
+		{
+			result *= -1;
+		}
 		last_index--;
-	if (last_index < 0)
-		return (result);
-	else
-		return (result * -1);
+	}
+	return (result);
 }
 
