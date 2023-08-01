@@ -8,8 +8,10 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	char *start = NULL, *src, *substr;
-	
+	char *start = NULL;
+	char *src;
+	char *substr;
+
 	if (needle == NULL)
 	{
 		return (NULL);
@@ -40,7 +42,4 @@ char *_strstr(char *haystack, char *needle)
 	}
 	return (start);
 }
-
-
-
 
