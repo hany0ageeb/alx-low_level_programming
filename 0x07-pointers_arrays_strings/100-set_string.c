@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stddef.h>
 /**
  * _strlen - a function to calc string length
  * @s: string
@@ -8,6 +9,8 @@ int _strlen(char *s)
 {
 	int len = 0;
 
+	if (s == NULL)
+		return (0);
 	while (s[len] != '\0')
 		len++;
 	return (len);
@@ -23,6 +26,8 @@ void set_string(char **s, char *to)
 	int len = _strlen(to), index = 0;
 	char *_s = malloc(sizeof(char) * (len + 1));
 
+	if (to == NULL)
+		*s = NULL;
 	while (to[index] != '\0')
 	{
 		_s[index] = to[index];
