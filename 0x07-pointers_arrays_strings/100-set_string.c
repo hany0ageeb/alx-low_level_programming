@@ -1,20 +1,5 @@
-#include <stdlib.h>
 #include <stddef.h>
-/**
- * _strlen - a function to calc string length
- * @s: string
- * Return: s length
- */
-int _strlen(char *s)
-{
-	int len = 0;
-
-	if (s == NULL)
-		return (0);
-	while (s[len] != '\0')
-		len++;
-	return (len);
-}
+#define MAX_SIZE 1000
 /**
  * set_string - a function that sets the value of a pointer to a char
  * @s: a string to set
@@ -23,12 +8,12 @@ int _strlen(char *s)
  */
 void set_string(char **s, char *to)
 {
-	int len = _strlen(to), index = 0;
-	char *_s = malloc(sizeof(char) * (len + 1));
+	int index = 0;
+	char _s[MAX_SIZE];
 
 	if (to == NULL)
 		*s = NULL;
-	while (to[index] != '\0')
+	while (to[index] != '\0' && index < MAX_SIZE)
 	{
 		_s[index] = to[index];
 		index++;
