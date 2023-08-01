@@ -9,7 +9,15 @@
 char *_strstr(char *haystack, char *needle)
 {
 	char *start = NULL, *src, *substr;
-
+	
+	if (needle == NULL)
+	{
+		return (NULL);
+	}
+	if (*needle == '\0')
+	{
+		return (haystack);
+	}
 	while (haystack != NULL && *haystack != '\0')
 	{
 		if (*haystack == *needle)
