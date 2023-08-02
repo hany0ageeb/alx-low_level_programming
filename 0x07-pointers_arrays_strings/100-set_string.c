@@ -12,7 +12,10 @@ void set_string(char **s, char *to)
 	char _s[MAX_SIZE];
 
 	if (to == NULL)
+	{
 		*s = NULL;
+		return;
+	}
 	while (to[index] != '\0' && index < MAX_SIZE)
 	{
 		_s[index] = to[index];
