@@ -23,6 +23,6 @@ void print_rev(char *s, unsigned int n_line)
  */
 void _print_rev_recursion(char *s)
 {
-	print_rev(s, 0);
+	print_rev(s, 1);
 }
 
