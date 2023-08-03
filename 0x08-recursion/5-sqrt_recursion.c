@@ -1,21 +1,23 @@
 /**
  * _sqrt -calc the natural sqrt of n
  * @n: an intgere
- * @sqrt: the initial guess of n sqrt value
+ * @guess: the initial guess of n sqrt value
  * Return: natural sqrt of n or -1
  */
-int _sqrt(int n, int sqrt)
+int _sqrt(int n, int guess)
 {
+	long int n2 = guess * guess;
+
 	if (n == 0)
 		return (0);
 	if (n == 1)
 		return (1);
-	if (sqrt < 0)
+	if (guess < 0)
 		return (-1);
-	if (sqrt * sqrt > n)
-		return (_sqrt(n, sqrt - 1));
-	else if (sqrt * sqrt == n)
-		return (sqrt);
+	if (n2 < guess || n2 > n)
+		return (_sqrt(n, guess / 2));
+	else if (n2 == n)
+		return (guess);
 	return (-1);
 }
 /**
@@ -26,5 +28,5 @@ int _sqrt(int n, int sqrt)
  */
 int _sqrt_recursion(int n)
 {
-	return (_sqrt(n, n - 1));
+	return (_sqrt(n, n / 2));
 }
