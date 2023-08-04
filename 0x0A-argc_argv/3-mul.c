@@ -34,12 +34,12 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		printf("ERROR\n");
+		printf("Error\n");
 		return (1);
 	}
 	if (!is_number(argv[1]) || !is_number(argv[1]))
 	{
-		printf("ERROR\n");
+		printf("Error\n");
 		return (1);
 	}
 	a = atoi(argv[1]);
