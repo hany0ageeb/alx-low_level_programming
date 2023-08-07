@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stddef.h>
-#include <stdio.h>
 
 /**
  * word_count - count the number of words
@@ -79,6 +78,11 @@ char *get_word(char *str, int *start)
 	return (word);
 
 }
+/**
+ * strtow - a function that splits a string into words.
+ * @str: a string
+ * Return: a pointer to an array of strings (words)
+ */
 char **strtow(char *str)
 {
 	char **words = NULL;
@@ -87,7 +91,6 @@ char **strtow(char *str)
 
 	if (str == NULL || *str == '\0')
 	{
-		printf("str is null\n");
 		return (NULL);
 	}
 	w_count = word_count(str);
