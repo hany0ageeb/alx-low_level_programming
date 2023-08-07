@@ -1,5 +1,7 @@
 #include <stdlib.h>
 #include <stddef.h>
+#include <stdio.h>
+
 /**
  * word_count - count the number of words
  * @str: string
@@ -25,6 +27,8 @@ int word_count(char *str)
 		}
 		str++;
 	}
+	if (inside_word)
+		count++;
 	return (count);
 }
 /**
@@ -82,7 +86,10 @@ char **strtow(char *str)
 	int w_count, start = 0, i;
 
 	if (str == NULL || *str == '\0')
+	{
+		printf("str is null\n");
 		return (NULL);
+	}
 	w_count = word_count(str);
 	words = malloc((w_count + 1) * sizeof(char *));
 	if (words != NULL)
