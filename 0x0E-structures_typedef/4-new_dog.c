@@ -7,21 +7,24 @@
  */
 char *_strcpy(char *src)
 {
-	char *str = 0;
+	char *str = (void *)0;
 	int i = 0;
 
-	if (src != 0)
+	if (src != (void *)0)
 	{
 		while (src[i] != '\0')
 			i++;
 		str = malloc(sizeof(char) * i + 1);
-		i = 0;
-		while (src[i] != '\0')
+		if (str != (void *)0)
 		{
-			str[i] = src[i];
-			i++;
+			i = 0;
+			while (src[i] != '\0')
+			{
+				str[i] = src[i];
+				i++;
+			}
+			str[i] = '\0';
 		}
-		str[i] = '\0';
 
 	}
 	return (str);
@@ -37,7 +40,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d = malloc(sizeof(dog_t));
 
-	if (d != 0)
+	if (d != (void *)0)
 	{
 		d->name = _strcpy(name);
 		d->age = age;
