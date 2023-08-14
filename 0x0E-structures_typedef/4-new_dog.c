@@ -17,13 +17,11 @@ char *_strcpy(char *src)
 		str = malloc(sizeof(char) * i + 1);
 		if (str != (void *)0)
 		{
-			i = 0;
-			while (src[i] != '\0')
+			while (i >= 0)
 			{
 				str[i] = src[i];
-				i++;
+				i--;
 			}
-			str[i] = '\0';
 		}
 
 	}
