@@ -39,8 +39,11 @@ char *_strcpy(char *src)
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	d->name = _strcpy(name);
-	d->age = age;
-	d->owner = _strcpy(owner);
+	if (d != (void *)0)
+	{
+		d->name = _strcpy(name);
+		d->age = age;
+		d->owner = _strcpy(owner);
+	}
 }
 
