@@ -1,5 +1,5 @@
 #include "dog.h"
-#include "stdlib.h"
+#include <stdlib.h>
 /**
  * _strcpy - make a copy of src string
  * @src: source string to copy
