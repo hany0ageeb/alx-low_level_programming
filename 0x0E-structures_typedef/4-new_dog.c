@@ -42,8 +42,20 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (d != (void *)0)
 	{
 		d->name = _strcpy(name);
+		if (name != (void *)0 && d->name == (void *)0)
+		{
+			free(d);
+			d = (void *)0;
+			return (d);
+		}
 		d->age = age;
 		d->owner = _strcpy(owner);
+		if (owner != (void *)0 && d->owner == (void *)0)
+		{
+			free(d->name);
+			free(d);
+			return ((void *)0);
+		}
 	}
 	return (d);
 }
