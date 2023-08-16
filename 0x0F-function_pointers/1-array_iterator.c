@@ -1,3 +1,7 @@
+#ifndef __need_size_t
+#define __need_size_t
+typedef unsigned long int size_t;
+#endif
 /**
  * array_iterator - function that executes a function given as
  * a parameter on each element of an array.
