@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/**
+ * main - program that prints the opcodes of its own main function.
+ * @argc: args count
+ * @argv: args
+ * Return: 1 if  argc not 2
+ * 2 of ag less than zero
+ * 0 otherwise
+ */
 int main(int argc, char **argv)
 {
 	int num_of_bytes;
