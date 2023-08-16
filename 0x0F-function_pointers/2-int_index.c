@@ -9,7 +9,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i = 0;
 
-	if (cmp != (void *)0)
+	if (cmp != (void *)0 && array != (void *)0)
 	{
 		while (i < size)
 		{
