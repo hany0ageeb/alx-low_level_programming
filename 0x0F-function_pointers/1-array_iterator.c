@@ -9,7 +9,7 @@ void array_iterator(int *array, unsigned long int size, void (*action)(int))
 {
 	unsigned int i = 0;
 
-	if (action != (void *)0)
+	if (action != (void *)0 && array != (void *)0)
 	{
 		while (i < size)
 		{
