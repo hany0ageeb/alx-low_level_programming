@@ -5,7 +5,7 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	if (f != (void *)NULL)
+	if (f != (void *)0)
 		f(name);
 }
 
