@@ -2,16 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * struct list_address - list of pointer address
- * @address: address
- * @nex: next
- */
-struct list_address
-{
-	unsigned long int address;
-	struct list_address *next;
-};
-/**
  * add_node - add node in front of head
  * @head: head node
  * @add: address
