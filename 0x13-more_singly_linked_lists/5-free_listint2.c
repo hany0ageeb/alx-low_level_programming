@@ -18,8 +18,8 @@ void free_listint2(listint_t **head)
 			end = end->next;
 		}
 		free(end);
-		if (pr_end != NULL)
-			pr_end->next = NULL;
+		if (pre_end != NULL)
+			pre_end->next = NULL;
 	}
 	free(*head);
 	*head = NULL;
