@@ -1,16 +1,7 @@
 #ifndef _LISTS_H_
 #define _LISTS_H_
 #include <stddef.h>
-/**
- * struct list_address - list of pointer address
- * @address: address
- * @nex: next
- */
-struct list_address
-{
-	unsigned long int address;
-	struct list_address *next;
-};
+
 /**
  * struct listint_s - singly linked list
  * @n: integer
