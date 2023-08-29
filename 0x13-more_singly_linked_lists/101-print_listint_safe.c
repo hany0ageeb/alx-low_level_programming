@@ -18,20 +18,23 @@ size_t print_listint_safe(const listint_t *head)
 		count++;
 		ps = head->next;
 		pf = head->next;
+		while (ps != NULL && pf != NULL && pf->next != NULL)
+		{
+			printf("[%p] %d\n", (void *)ps, ps->n);
+			count++;
+			ps = ps->next;
+			pf = pf->next->next;
+			if (ps == pf)
+			{
+				printf("-> [%p] %d\n", (void *)pf, pf->n);
+				exit(98);
+			}
+		}
 		while (ps != NULL)
 		{
 			printf("[%p] %d\n", (void *)ps, ps->n);
 			count++;
 			ps = ps->next;
-			if (pf != NULL && pf->next != NULL)
-				pf = pf->next->next;
-			else
-				pf = NULL;
-			if (ps == pf && ps != NULL)
-			{
-				printf("-> [%p] %d\n", (void *)pf, pf->n);
-				exit(98);
-			}
 		}
 	}
 	return (count);
