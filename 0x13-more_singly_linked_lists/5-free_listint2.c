@@ -4,7 +4,7 @@
  * detect_loop - detects loop
  * @head: head
  * Return: null ot nodeadd
- 
+ */
 listint_t *detect_loop(listint_t *head)
 {
 	listint_t *ps, *pf;
@@ -20,7 +20,6 @@ listint_t *detect_loop(listint_t *head)
 	}
 	return (NULL);
 }
-*/
 /**
  * free_listint2 - function that frees a listint_t list.
  * @head: head node
@@ -31,7 +30,6 @@ void free_listint2(listint_t **head)
 
 	if (head == NULL)
 		return;
-	/*
 	end = detect_loop(*head);
 	if (end != NULL)
 	{
@@ -41,7 +39,6 @@ void free_listint2(listint_t **head)
 		}
 		end->next = NULL;
 	}
-	*/
 	while (*head != NULL && (*head)->next != NULL)
 	{
 		pre_end = *head;
