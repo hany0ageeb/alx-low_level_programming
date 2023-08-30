@@ -28,7 +28,7 @@ void free_listint2(listint_t **head)
 {
 	listint_t *end, *pre_end;
 
-	if (*head == NULL)
+	if (head == NULL)
 		return;
 	end = detect_loop(*head);
 	if (end != NULL)
