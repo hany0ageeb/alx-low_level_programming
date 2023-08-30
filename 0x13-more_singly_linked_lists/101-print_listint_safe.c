@@ -10,31 +10,37 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t count = 0;
-	listint_t *ps, *pf;
+	listint_t *visitor;
+	const listint_t *pre = head;
 
-	if (head != NULL)
+	if (head == NULL)
+		return (0);
+	if (head == head->next)
 	{
-		printf("[%p] %d\n", (void *)head, head->n);
-		count++;
-		ps = head->next;
-		pf = head->next;
-		while (ps != NULL && pf != NULL && pf->next != NULL)
+		printf("-> [%p] %d\n", (void *)head, head->n);
+		exit(98);
+	}
+	visitor = head->next;
+	while (visitor != NULL)
+	{
+		if (visitor->visited != 'Y')
 		{
-			printf("[%p] %d\n", (void *)ps, ps->n);
+			visitor->visited = 'Y';
+			pre = visitor;
+			printf("[%p] %d\n", (void *)visitor, visitor->n);
+			visitor = visitor->next;
 			count++;
-			ps = ps->next;
-			pf = pf->next->next;
-			if (ps == pf)
-			{
-				printf("-> [%p] %d\n", (void *)pf, pf->n);
-				exit(98);
-			}
 		}
-		while (ps != NULL)
+		else
 		{
-			printf("[%p] %d\n", (void *)ps, ps->n);
-			count++;
-			ps = ps->next;
+			visitor = head->next;
+			while (visitor != NULL && visitor->visited == 'Y')
+			{
+				visitor->visited = 'N';
+				visitor = visitor->next;
+			}
+			printf("-> [%p] %d\n", (void *)pre, pre->n);
+			exit(98);
 		}
 	}
 	return (count);
