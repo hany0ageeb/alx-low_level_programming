@@ -1,23 +1,22 @@
 /**
- * flip_bits - a function that returns the number of bits you would need to flip to get from one number to another.
+ * flip_bits - a function that returns the number of bits you would need to
+ * flip to get from one number to another.
  * @n: from number
  * @m: to number
  * Return: the number of bits to flip
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	const unsigned long int one = 1;
-	unsigned long int t1, t2;
 	unsigned int count = 0;
+	unsigned long int tmp;
 
-	while (n > 0 || m > 0)
+	if (n == m)
+		return (0);
+	tmp = n ^ m;
+	while (tmp > 0)
 	{
-		t1 = n & one;
-		t2 = m & one;
-		if (t1 != t2)
-			count++;
-		n >>= one;
-		m >>= one;
+		count++;
+		tmp &= (tmp - 1);
 	}
 	return (count);
 }
