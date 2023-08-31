@@ -6,14 +6,18 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int tmp;
+	const unsigned long int one = 1;
+	unsigned long int t1, t2;
 	unsigned int count = 0;
 
-	tmp = n ^ m;
-	while (tmp > 0)
+	while (n > 0 || m > 0)
 	{
-		count++;
-		tmp &= (tmp - 1);
+		t1 = n & one;
+		t2 = m & one;
+		if (t1 != t2)
+			count++;
+		n >>= one;
+		m >>= one;
 	}
 	return (count);
 }
