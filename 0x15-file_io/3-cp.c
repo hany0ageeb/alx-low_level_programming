@@ -2,6 +2,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/stat.h>
 /**
  * _cp - copy from fd_from to fd_to
  * @fd_from: from fd
@@ -69,6 +70,7 @@ int main(int argc, char **argv)
 			exit(100);
 		}
 	}
+	chmod(argv[2], 0664);
 	exit(EXIT_SUCCESS);
 }
 
