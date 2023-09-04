@@ -3,7 +3,7 @@
 /**
  * _strlen - a function to calculate the length of a string in chars
  * @str: string to find its legnth
- * Return length of str
+ * Return: length of str
  */
 size_t _strlen(const char *str)
 {
