@@ -13,13 +13,13 @@
 void _cp(int fd_from, int fd_to, const char *to_file_name,
 		const char *from_file_name)
 {
-	ssize_t r = 0, w = 0;
+	int r = 0, w = 0;
 	char buffer[1025];
 
 	while (1)
 	{
 		r = read(fd_from, buffer, 1024);
-		if (r == -1)
+		if (r < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_file_name);
 			close(fd_from);
