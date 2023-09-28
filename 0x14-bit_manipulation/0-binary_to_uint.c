@@ -35,7 +35,7 @@ unsigned int binary_to_uint(const char *b)
 		}
 		else
 		{
-			value += (b[len - 1]) - 48 * w;
+			value += (b[len - 1] - 48) * w;
 			w *= BASE;
 		}
 		len--;
