@@ -21,7 +21,7 @@ static void copy_from_to(int fd_from, int fd_to, const char *to_file_name)
 		{
 			close(fd_from);
 			close(fd_to);
-			dprintf(STDERR_FILENO, "Can't write to %s\n", to_file_name);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to_file_name);
 			exit(99);
 		}
 		n_read = read(fd_from, buffer, 1024);
