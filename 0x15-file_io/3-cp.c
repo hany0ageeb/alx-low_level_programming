@@ -59,10 +59,14 @@ int main(int argc, char **argv)
 	copy_from_to(fd_from, fd_to, argv[2]);
 	fd_from_close = close(fd_from);
 	fd_to_close = close(fd_to);
-	if (fd_from_close == -1 || fd_to_close == -1)
+	if (fd_from_close == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d",
-				fd_from_close == -1 ? fd_from : fd_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from_close);
+		exit(100);
+	}
+	else if (fd_to_close == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to_close);
 		exit(100);
 	}
 	exit(EXIT_SUCCESS);
