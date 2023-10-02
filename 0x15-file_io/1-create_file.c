@@ -30,6 +30,8 @@ int create_file(const char *filename, char *text_content)
 	size_t len;
 	ssize_t n_write;
 
+	if (filename == NULL)
+		return (-1);
 	fout = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
 	if (fout != -1)
 	{
