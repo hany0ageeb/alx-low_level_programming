@@ -7,13 +7,19 @@
  * @fd_from: from file num
  * @fd_to: to file num
  * @to_file_name: to file name
+ * @from_file_name: from file name
  */
-static void copy_from_to(int fd_from, int fd_to, const char *to_file_name)
+static void copy_from_to(int fd_from, int fd_to, const char *to_file_name,
+		const char *from_file_name)
 {
 	char buffer[1025];
 	ssize_t n_read, n_write;
 
 	n_read = read(fd_from, buffer, 1024);
+	if (n_read == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_file_name);
+	}
 	while (n_read > 0)
 	{
 		n_write = write(fd_to, buffer, n_read);
@@ -56,7 +62,7 @@ int main(int argc, char **argv)
 		close(fd_from);
 		exit(99);
 	}
-	copy_from_to(fd_from, fd_to, argv[2]);
+	copy_from_to(fd_from, fd_to, argv[2], argv[1]);
 	fd_from_close = close(fd_from);
 	fd_to_close = close(fd_to);
 	if (fd_from_close == -1)
