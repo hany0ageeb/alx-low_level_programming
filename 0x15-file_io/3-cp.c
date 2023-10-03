@@ -19,6 +19,7 @@ static void copy_from_to(int fd_from, int fd_to, const char *to_file_name,
 	if (n_read == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_file_name);
+		exit(98);
 	}
 	while (n_read > 0)
 	{
