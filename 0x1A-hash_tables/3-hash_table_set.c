@@ -81,7 +81,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht->array[index] == NULL)
 	{
 		ht->array[index] = hash_node_create(key, value);
-		return (ht->array[index] == NULL);
+		return (ht->array[index] != NULL);
 	}
 	else
 	{
@@ -96,6 +96,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				strcpy(node->value, value);
 				return (1);
 			}
+			node = node->next;
 		}
 		node = hash_node_create(key, value);
 		if (node != NULL)
