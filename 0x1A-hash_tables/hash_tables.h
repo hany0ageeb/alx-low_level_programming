@@ -1,6 +1,7 @@
 #ifndef HASH_TABLES_H
 #define HASH_TABLES_H
-#define IS_NULL_OR_EMPT(s) ((s == (void *)0) || (*s == '\0'))
+#include <stddef.h>
+#define IS_NULL_OR_EMPT(s) ((s == NULL) || (*s == '\0'))
 /**
  * struct hash_node_s - Node of a hash table
  *
@@ -35,4 +36,5 @@ void hash_node_free(hash_node_t **node);
 unsigned long int hash_djb2(const unsigned char *str);
 unsigned long int key_index(const unsigned char *key, unsigned long int size);
 int hash_table_set(hash_table_t *ht, const char *key, const char *value);
+char *hash_table_get(const hash_table_t *ht, const char *key);
 #endif
