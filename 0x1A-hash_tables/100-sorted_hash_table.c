@@ -156,6 +156,17 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
+		node = ht->array[index];
+		while (node != NULL && strcmp(key, node->key) != 0)
+			node = node->next;
+		if (node != NULL)
+		{
+			node->value = realloc(node->value, strlen(value) + 1);
+			if (node->value == NULL)
+				return (0);
+			strcpy(node->value, value);
+			return (1);
+		}
 		node = shash_node_create(key, value);
 		if (node != NULL)
 		{
