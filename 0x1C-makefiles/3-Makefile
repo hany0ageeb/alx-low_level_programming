@@ -1,11 +1,12 @@
 CC=gcc
 NAME=school
 OBJ=main.o school.o
+SRC=main.c school.c
 RM=rm
 .PHONEY: all
 all: $(NAME)
 $(NAME): main.o school.o
-	$(CC) main.o school.o -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME)
 main.o: main.c m.h
 	$(CC) -c -o main.o main.c
 school.o: school.c
