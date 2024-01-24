@@ -6,8 +6,7 @@ OBJ=$(MAIN_OBJ) $(SCHOOL_OBJ)
 SRC=main.c school.c
 RM=rm
 .PHONEY: all
-all: $(NAME)
-$(NAME): main.o school.o
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 main.o: main.c m.h
 	$(CC) -c -o $(MAIN_OBJ) main.c
