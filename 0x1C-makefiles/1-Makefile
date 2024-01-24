@@ -1,0 +1,6 @@
+CC=gcc
+SRC=main.c school.c
+.PHONEY: all
+all: school
+school: main.c school.c m.h
+	$(CC) $(SRC) -o school
