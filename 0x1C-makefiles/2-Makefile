@@ -1,14 +1,7 @@
-NAME=school
-CC=gcc
-SRC=main.c school.c
-MAIN_OBJ=main.o
-SCHOOL_OBJ=school.o
-OBJ=$(MAIN_OBJ) $(SCHOOL_OBJ)
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
 .PHONEY: all
-all: $(NAME)
-$(NAME): $(OBJ)
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-$(MAIN_OBJ): main.c school.c m.h
-	$(CC) -c -o $(MAIN_OBJ) main.c
-$(SCHOOL_OBJ): school.c m.h
-	$(CC) -c -o $(SCHOOL_OBJ) school.c
