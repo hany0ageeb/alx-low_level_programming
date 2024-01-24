@@ -7,9 +7,8 @@ OBJ=$(MAIN_OBJ) $(SCHOOL_OBJ)
 .PHONEY: all
 all: $(NAME)
 $(NAME): $(OBJ)
-	@-rm -f $(NAME)
 	$(CC) $(OBJ) -o $(NAME)
-$(MAIN_OBJ): main.c m.h
+$(MAIN_OBJ): main.c school.c m.h
 	$(CC) -c -o $(MAIN_OBJ) main.c
-$(SCHOOL_OBJ): school.c
+$(SCHOOL_OBJ): school.c m.h
 	$(CC) -c -o $(SCHOOL_OBJ) school.c
