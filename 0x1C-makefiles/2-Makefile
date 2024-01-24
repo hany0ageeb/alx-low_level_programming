@@ -2,7 +2,7 @@ NAME=school
 CC=gcc
 SRC=main.c school.c
 OBJ=main.o school.o
-.PHONET: all
+.PHONEY: all
 all: $(NAME)
 $(NAME): main.o school.o
 	$(CC) $(OBJ) -o $(NAME)
