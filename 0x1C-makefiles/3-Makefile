@@ -1,0 +1,22 @@
+CC=gcc
+NAME=school
+OBJ=main.o school.o
+RM=rm
+.PHONEY: all
+all: $(NAME)
+$(NAME): main.o school.o
+	$(CC) main.o school.o -o $(NAME)
+main.o: main.c m.h
+	$(CC) -c -o main.o main.c
+school.o: school.c
+	$(CC) -c -o school.o school.c
+.PHONEY: re
+re:oclean all
+.PHONEY: oclean
+oclean:
+	-$(RM) -f $(OBJ)
+.PHONEY: clean
+clean:
+	-$(RM) -f *.swp *.swo *~ $(NAME)
+.PHONEY: fclean
+fclean: oclean clean
