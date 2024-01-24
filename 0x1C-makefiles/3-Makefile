@@ -1,24 +1,13 @@
 CC=gcc
 NAME=school
-MAIN_OBJ=main.o
-SCHOOL_OBJ=school.o
-OBJ=$(MAIN_OBJ) $(SCHOOL_OBJ)
 SRC=main.c school.c
-RM=rm
-.PHONEY: all
+OBJ=$(SRC:.c=.o)
+RM=rm -f
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-main.o: main.c m.h
-	$(CC) -c -o $(MAIN_OBJ) main.c
-school.o: school.c
-	$(CC) -c -o $(SCHOOL_OBJ) school.c
-.PHONEY: re
-re:oclean all
-.PHONEY: oclean
-oclean:
-	-$(RM) -f $(OBJ)
-.PHONEY: clean
 clean:
-	-$(RM) -f *.swp *.swo *~ $(NAME)
-.PHONEY: fclean
-fclean: oclean clean
+	$(RM) *~ $(NAME)
+oclean:
+	$(RM) $(OBJ)
+fclean: clean oclean
+re: oclean all
